@@ -1,0 +1,1 @@
+export {History} from './src/core/history.ts'
