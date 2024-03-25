@@ -51,12 +51,12 @@ jobs:
           node-version: '16'
       - name: Publish
         run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm config set //registry.npmjs.org/:_authToken ${NPMJS_ACCESS_TOKEN}
           npm ci
           bun run build
           bun run publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN}}
 
   create-github-release:
     name: Create GitHub Release
