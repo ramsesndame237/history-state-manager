@@ -1,0 +1,38 @@
+# Auto Version JS
+
+[![npm version](https://badgen.net/npm/v/auto-version-js)](https://www.npmjs.com/package/npm-auto-version)
+[![npm downloads](https://badgen.net/npm/dt/auto-version-js)](https://www.npmjs.com/package/npm-auto-version)
+
+`auto-version-js` is a light & fast NPM library to **automatically increase the version number** of a package.
+
+## Installation
+First, install the npm package :
+```bash
+npm i -D auto-version-js
+```
+
+Then to increment the version number, simply run :
+```bash
+npx auto-version --patch  # +0.0.1
+npx auto-version --minor  # +0.1.0
+npx auto-version --major  # +1.0.0
+npx auto-version          # no args is equivalent to --patch
+```
+
+To implement it in your `package.json` file :
+```json
+"scripts": {
+    "publish": "npx auto-version && npm publish"
+}
+```
+
+
+## Documentation
+
+In this library, `versionString` represents a version as a string : `'1.2.3'` and `versionObject` represents a version as an object : `{ major: 1, minor: 2, patch: 3 }`
+
+{{>main}}
+
+* * *
+
+2020 &copy; Dorian Beauchesne

@@ -3,15 +3,19 @@
   "version": "0.0.1",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "",
     "build": "tsup",
-    "test": "bun test"
+    "test": "bun test",
+    "publish": "npx auto-verion && npm publish"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "auto-version-js": "^0.3.10",
     "tsup": "^8.0.2"
   },
   "peerDependencies": {
