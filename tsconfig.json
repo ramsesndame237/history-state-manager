@@ -3,6 +3,7 @@
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "ESNext",
+    "outDir": "./dist",
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
