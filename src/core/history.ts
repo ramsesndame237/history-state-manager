@@ -1,22 +1,7 @@
 import {record2State, state2Record} from "../helpers/transform.ts";
+import type {Options, Rule, State} from "../types/types.ts";
 
 
-type State = any; // Define your State type appropriately
-
-type Rule = {
-    match: (state: State) => boolean;
-    toRecord: (node: State) => { chunks: any[]; children: State[] };
-    fromRecord: ({ chunks, children }: { chunks: any[]; children: State[] }) => State;
-};
-
-type Options = {
-    initialState?: State;
-    rules?: Rule[];
-    delay?: number;
-    maxLength?: number;
-    onChange?: (state: State | null) => void;
-    useChunks?: boolean;
-};
 
 const noop = () => {};
 

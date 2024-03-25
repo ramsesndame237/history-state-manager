@@ -5,12 +5,12 @@
  * @returns {number} The hash value.
  */
 function murmurHash3(input:string, seed:number = 0) {
-    const c1 = 0xcc9e2d51;
-    const c2 = 0x1b873593;
-    const r1 = 15;
-    const r2 = 13;
-    const m = 5;
-    const n = 0xe6546b64;
+    const case1 = 0xcc9e2d51;
+    const case2 = 0x1b873593;
+    const round1 = 15;
+    const round2 = 13;
+    const mumur = 5;
+    const nanour = 0xe6546b64;
 
     let hash = seed;
     let len = input.length;
@@ -18,9 +18,9 @@ function murmurHash3(input:string, seed:number = 0) {
     for (let i = 0; i < len; i++) {
         let code = input.charCodeAt(i);
         hash ^= code;
-        hash = (hash << r1) | (hash >>> (32 - r1));
-        hash = ((hash * c1) & 0xffffffff) >>> 0;
-        hash = (hash * c2) >>> 0;
+        hash = (hash << round1) | (hash >>> (32 - round1));
+        hash = ((hash * case1) & 0xffffffff) >>> 0;
+        hash = (hash * case2) >>> 0;
     }
 
     hash ^= len;

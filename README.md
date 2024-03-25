@@ -1,15 +1,27 @@
 # history-state-manager
 
-To install dependencies:
+Efficient management of state history with structure sharing, providing a non-intrusive approach to tracking state changes in web and software applications.This solution aims to minimize data duplication by sharing common parts between successive state thereby improving performance and reducing memory consumption
 
-```bash
-bun install
+
+## Installation
+
+Install via NPM : 
+```javascript
+    npm i history-state-manager
 ```
+### Basic usage:
+```javascript
+import { History } from 'history-state-manager'
 
-To run:
+const state = { a: 1, b: 2 }
 
-```bash
-bun run index.ts
+const history = new History()
+history.pushSync(state) // the terser `history.push` API is async
+
+state.a = 2 // mutation!
+history.pushSync(state)
+
+history.get() // { a: 2, b: 2 }
+history.undo().get() // { a: 1, b: 2 }
+history.redo().get() // { a: 2, b: 2 }
 ```
-
-This project was created using `bun init` in bun v1.0.22. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
