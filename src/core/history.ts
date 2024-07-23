@@ -3,7 +3,7 @@ import type {Options, Rule, State} from "../types/types.ts";
 
 
 
-const noop = () => {};
+const noHandleOnchange = () => {};
 
 export class History {
     private rules: Rule[];
@@ -30,7 +30,7 @@ export class History {
         this.delay = options.delay || 50;
         this.maxLength = options.maxLength || 100;
         this.useChunks = options.useChunks === undefined ? true : options.useChunks;
-        this.onChange = options.onChange || noop;
+        this.onChange = options.onChange || noHandleOnchange;
 
         this.$index = -1;
         this.$records = [];
